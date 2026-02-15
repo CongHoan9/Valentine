@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chúc mừng ngày Valentine 14-2-2026</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="image/icon.png" type="image/png">
+        <meta property="og:image" content="https://201012423tn.onrender.com/image/icon.png">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+    </head>
+    <body class="min-h-screen relative animated-gradient">
+        <div id="bg-blur" class="fixed inset-0 z-0"></div>
+        <canvas id="hearts-container" class="fixed w-full h-full inset-0 overflow-hidden pointer-events-none"></canvas>
+        <header class="sticky top-0 z-30  bg-white/30 border-b border-white/30">
+            <div class="mx-auto max-w-3xl px-5 py-3 flex items-center justify-between">
+                <div id="title-names" class="font-semibold">Chúc mừng Valentine 14-2</div>
+                <div class="flex items-center gap-2">
+                    <button id="btn-audio" onclick="document.getElementById('music-header').scrollIntoView()" class="rounded-full px-3 py-1.5  border-b border-white/30 bg-white/30 shadow text-sm">♫ Nhạc</button>
+                    <button id="btn-gift" class="rounded-full px-3 py-1.5 bg-rose-500 text-white text-sm">♡ Mở quà</button>
+                </div>
+            </div>
+        </header>
+        <main class="relative space-y-3">
+            <section class="py-5 px-5 max-w-3xl mx-auto">
+                <h1 data-duration="1" data-ease="back.inOut(2)" data-start="center bottom+=50%" data-end="bottom bottom-=40%" data-stagger="0.03" class="scroll-float text-3xl sm:text-5xl font-extrabold tracking-tight mb-3 text-rose-700">Welcome An, vợ yêu của anh</h1>
+                <p data-duration="1" data-ease="back.inOut(2)" data-start="center bottom+=50%" data-end="bottom bottom-=40%" class="scroll-float text-sm sm:text-base text-gray-700">Trang nhỏ này là dành cho em bé của anh đó ♡</p>
+            </section>
+            <section class="max-w-3xl mx-auto px-5">
+                <div class="grid grid-cols-3 p-3 rounded-3xl animated-gradient text-center">
+                    <div>
+                        <div id="days-together" class="text-2xl font-bold">0</div>
+                        <div class="text-xs opacity-70">Ngày quen nhau</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold">∞</div>
+                        <div class="text-xs opacity-70">Lời yêu ♡</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold">An</div>
+                        <div class="text-xs opacity-70">Là readonly</div>
+                    </div>
+                </div>
+            </section>
+            <section class="max-w-3xl mx-auto px-5">
+                <div class="relative">
+                    <div class="relative w-full aspect-[2/1] overflow-hidden rounded-3xl bg-white">
+                        <div id="slideshow" class="overflow-hidden rounded-3xl">
+                        </div>
+                        <div class="absolute bottom-0 inset-x-0 p-5 text-white z-10">
+                            <p id="slide-caption" class="text-sm"></p>
+                        </div>
+                        <button id="prev-slide"
+                            class="absolute left-2 top-1/2 -translate-y-1/2 bg-white px-2 py-2 rounded-full z-20">
+                            <svg width="16" height="16" fill="black" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M11 1 3 8l8 7V1z" />
+                            </svg>
+                        </button>
+                        <button id="next-slide" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white px-2 py-2 rounded-full z-20">
+                            <svg width="16" height="16" fill="black" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M5 1l8 7-8 7V1z" />
+                            </svg>
+                        </button>
+                        <div class="relative w-full rounded-3xl h-full z-10 overflow-hidden">
+                            <svg class="absolute -bottom-[1px]" width="200%" height="30%" viewBox="0 0 1000 100"
+                                preserveAspectRatio="none">
+                                <defs>
+                                    <pattern id="cloudPattern" x="0" y="0" width="360" height="100" patternUnits="userSpaceOnUse">
+                                        <path
+                                            d="M0,65 q30,-30 60,0 q16,-10 30,5 q40,-43 80,-5 q20,-18 40,5 q25,-28 50,-5 q15,-15 30,0 q35,-35 70,0 L360,100 L0,100 Z"
+                                            fill="#ffffff80"></path>
+                                    </pattern>
+                                </defs>
+                                <rect width="200%" height="100%" fill="url(#cloudPattern)">
+                                    <animateTransform attributeName="transform" type="translate" from="0 0" to="-1000 0" dur="100s" repeatCount="indefinite" />
+                                </rect>
+                            </svg>
+                        </div>
+                    </div>
+                    <svg class="absolute -top-6 -left-2 heart-left" width="60" height="60" viewBox="2 2 20 20" fill="#ff7f9c">
+                        <path d="M2 9.1371C2 14 6.01943 16.5914 8.96173 18.9109C10 19.7294 11 20.5 12 20.5C13 20.5 14 19.7294 15.0383 18.9109C17.9806 16.5914 22 14 22 9.1371C22 4.27416 16.4998 0.825464 12 5.50063C7.50016 0.825464 2 4.27416 2 9.1371Z" />
+                    </svg>
+                </div>
+            </section>
+            <section class="max-w-3xl mx-auto px-5">
+                <div class="animated-gradient rounded-3xl p-5 space-y-3">
+                    <div class="flex justify-between">
+                        <span class="text-lg font-semibold">Đếm ngược</span>
+                        <span class="text-lg font-semibold">13/1/2026</span>
+                    </div>
+                    <div id="countdown" class="grid grid-cols-4 gap-3 text-center"></div>
+                </div>
+            </section>
+            <section class="py-5 max-w-3xl mx-auto px-5">
+                <h1 data-duration="1" data-ease="back.inOut(2)" data-start="center bottom+=50%" data-end="bottom bottom-=40%" class="scroll-float text-3xl sm:text-5xl font-extrabold tracking-tight mb-3 text-rose-700">Bộ sưu tập ảnh</h1>
+                <p data-duration="1" data-ease="back.inOut(2)" data-start="center bottom+=50%" data-end="bottom bottom-=40%" class="scroll-float text-sm sm:text-base text-gray-700">Những bức ảnh đẹp nhất</p>
+            </section>
+            <section class="max-w-3xl mx-auto px-5">
+                <div class="relative">
+                    <div class=" animated-gradient overflow-hidden rounded-3xl grid gap-5 p-5 grid-cols-1 sm:grid-cols-2">
+                        <div class="wrapper w-full h-full aspect-square">
+                            <canvas id="canvas-1" class="center-img"></canvas>
+                            <canvas id="canvas-2" class="center-img-top"></canvas>
+                            <svg viewBox="0 0 500 500" class="circle-text">
+                                <defs>
+                                    <path id="circlePath" d="M 250,250 m 250,0 a -250,250 0 1,0 -500,0 a -250,250 0 1,0 500,0"></path>
+                                    <filter id="textShadow" x="-50%" y="-50%" width="200%" height="200%">
+                                        <feDropShadow dx="4" dy="4" stdDeviation="4" flood-color="black"
+                                            flood-opacity="0.5"></feDropShadow>
+                                    </filter>
+                                </defs>
+                                <text font-size="105" fill="white" letter-spacing="11" text-anchor="middle" filter="url(#textShadow)">
+                                    <textPath xlink:href="#circlePath" startOffset="50%">chúc mừng Valentine 14/2</textPath>
+                                </text>
+                            </svg>
+                        </div>
+                        <div class="grid grid-cols-4 grid-rows-1 sm:grid-cols-2 sm:grid-rows-2 gap-3">
+                            <div class="overflow-hidden aspect-square rounded-xl bg-white transition-transform duration-300 hover:scale-105">
+                                <img src="image/img1.png" class="w-full h-full aspect-square object-cover">
+                            </div>
+                            <div class="overflow-hidden aspect-square rounded-xl bg-white transition-transform duration-300 hover:scale-105">
+                                <img src="image/img2.png" class="w-full h-full aspect-square object-cover">
+                            </div>
+                            <div class="overflow-hidden aspect-square rounded-xl bg-white transition-transform duration-300 hover:scale-105">
+                                <img src="image/img3.png" class="w-full h-full aspect-square object-cover">
+                            </div>
+                            <div class="overflow-hidden aspect-square rounded-xl bg-white transition-transform duration-300 hover:scale-105">
+                                <img src="image/img4.png" class="w-full h-full aspect-square object-cover">
+                            </div>
+                        </div>
+                    </div>
+                    <svg class="absolute -top-6 -right-2 heart-right" width="60" height="60" viewBox="2 2 20 20" fill="#ff7f9c">
+                        <path d="M2 9.1371C2 14 6.01943 16.5914 8.96173 18.9109C10 19.7294 11 20.5 12 20.5C13 20.5 14 19.7294 15.0383 18.9109C17.9806 16.5914 22 14 22 9.1371C22 4.27416 16.4998 0.825464 12 5.50063C7.50016 0.825464 2 4.27416 2 9.1371Z" />
+                    </svg>
+                </div>
+            </section>
+            <section class="max-w-3xl mx-auto px-5">
+                <div class="images grid grid-cols-5 grid-rows-1 p-[10px_0px_30px_86px] m-[-10px_0px_-30px_-20px]">
+                    <div class="overflow-hidden aspect-square rounded-3xl -ml-[66px] transition-transform duration-300 ease-in-out bg-white shadow-[-10px_0_20px_rgba(0,0,0,.10)]">
+                        <img src="image/img5.png" class="aspect-square">
+                    </div>
+                    <div class="overflow-hidden aspect-square rounded-3xl -ml-[66px] transition-transform duration-300 ease-in-out bg-white shadow-[-10px_0_20px_rgba(0,0,0,.10)]">
+                        <img src="image/img6.png" class="aspect-square">
+                    </div>
+                    <div class="overflow-hidden aspect-square rounded-3xl -ml-[66px] transition-transform duration-300 ease-in-out bg-white shadow-[-10px_0_20px_rgba(0,0,0,.10)]">
+                        <img src="image/img7.png" class="aspect-square">
+                    </div>
+                    <div class="overflow-hidden aspect-square rounded-3xl -ml-[66px] transition-transform duration-300 ease-in-out bg-white shadow-[-10px_0_20px_rgba(0,0,0,.10)]">
+                        <img src="image/img8.png" class="aspect-square">
+                    </div>
+                    <div class="overflow-hidden aspect-square rounded-3xl -ml-[66px] transition-transform duration-300 ease-in-out bg-white shadow-[-10px_0_20px_rgba(0,0,0,.10)]">
+                        <img src="image/img9.png" class="aspect-square">
+                    </div>
+                </div>
+            </section>
+            <section class="py-5 max-w-3xl mx-auto px-5">
+                <h1 data-duration="1" data-ease="back.inOut(2)" data-start="center bottom+=50%" data-end="bottom bottom-=40%" class="scroll-float text-3xl sm:text-5xl font-extrabold tracking-tight mb-3 text-rose-700">Thư gửi vợ iu ♡</h1>
+                <p data-duration="1" data-ease="back.inOut(2)" data-start="center bottom+=50%" data-end="bottom bottom-=40%" class="scroll-float text-sm sm:text-base text-gray-700">Đôi lời anh muốn nói</p>
+            </section>
+            <div class="bg-gray-100 py-5 space-y-5">
+                <section class="relative max-w-3xl mx-auto px-5">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div id="envelope">
+                            <div id="flap" class="front"></div>
+                            <div id="pocket" class="front"></div>
+                            <div id="letter">
+                                <p class="line1">Gửi Phạm Xuân An,</p>
+                                <p class="line2">Chúc vợ yêu của anh Valentine vui vẻ</p>
+                                <p class="line3">Yêu vợ nhiều,</p>
+                                <p class="line4">Hoàn</p>
+                            </div>
+                            <div class="hearts">
+                                <div class="heart a1"></div>
+                                <div class="heart a2"></div>
+                                <div class="heart a3"></div>
+                            </div>
+                        </div>
+                        <div id="chocolate-wrapper" class="mx-auto relative h-[200px] w-[200px]">
+                            <div id="chocolate-box-bottom"></div>
+                            <div id="chocolate-box">
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="icon" version="1.1">
+                                        <path d="M0 832a128 128 0 0 0 128 128h768a128 128 0 0 0 128-128H0z" fill="#EAEAEA" />
+                                        <path d="M896 928H128a127.68 127.68 0 0 1-123.456-96H0a128 128 0 0 0 128 128h768a128 128 0 0 0 128-128h-4.544A127.68 127.68 0 0 1 896 928z"
+                                            fill="" />
+                                        <path d="M960 800v-288a64 64 0 0 0-64-64H128a64 64 0 0 0-64 64v288h896zM896 448V160a64 64 0 0 0-64-64H192a64 64 0 0 0-64 64v288h768z"
+                                            fill="#EACA44" />
+                                        <path d="M64 768h896v32H64z" fill="" />
+                                        <path d="M64 640h896v64H64zM128 288h768v64H128z" fill="#EAEAEA" />
+                                        <path d="M352 32a64 64 0 0 0-64 64h128a64 64 0 0 0-64-64zM512 32a64 64 0 0 0-64 64h128a64 64 0 0 0-64-64zM672 32a64 64 0 0 0-64 64h128a64 64 0 0 0-64-64z"
+                                            fill="#EF4D4D" />
+                                        <path d="M832 96H192a64 64 0 0 0-64 64v68.096l10.048 6.976s10.944 7.712 21.952 7.712 21.952-7.712 21.952-7.712L240 194.784c6.72-3.68 9.76-3.744 16 0l58.048 40.288s10.944 7.712 21.952 7.712 21.952-7.712 21.952-7.712L416 194.784c6.72-3.68 9.76-3.744 16 0l58.048 40.288s10.944 7.712 21.952 7.712 21.952-7.712 21.952-7.712L592 194.784c6.72-3.68 9.76-3.744 16 0l58.048 40.288s10.944 7.712 21.952 7.712 21.952-7.712 21.952-7.712L768 194.784c6.72-3.68 9.76-3.744 16 0l58.048 40.288s10.944 7.712 21.952 7.712 21.952-7.712 21.952-7.712L896 228.096V160a64 64 0 0 0-64-64zM64 512v62.56a30.208 30.208 0 0 0 8.672 1.44c11.008 0 21.952-7.712 21.952-7.712L152.672 528c6.72-3.68 9.76-3.744 16 0l58.048 40.288s10.944 7.712 21.952 7.712 21.952-7.712 21.952-7.712l58.048-40.288c6.72-3.68 9.76-3.744 16 0l58.048 40.288s10.944 7.712 21.952 7.712 21.952-7.712 21.952-7.712l58.048-40.288c6.72-3.68 9.76-3.744 16 0l58.048 40.288s10.944 7.712 21.952 7.712 21.952-7.712 21.952-7.712l58.048-40.288c6.72-3.68 9.76-3.744 16 0l58.048 40.288s10.944 7.712 21.952 7.712 21.952-7.712 21.952-7.712l58.048-40.288a17.6 17.6 0 0 1 7.904-2.688 14.912 14.912 0 0 1 7.584 2.688l58.048 40.288s10.944 7.712 21.952 7.712a30.368 30.368 0 0 0 7.84-1.184V512a64 64 0 0 0-64-64H128a64 64 0 0 0-64 64z"
+                                            fill="#4F3923" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="icon" version="1.1">
+                                        <path d="M0 512v448h992a32 32 0 0 0 32-32V512H0z" fill="#EAEAEA" />
+                                        <path d="M0 672h1024v96H0z" fill="#EF4D4D" />
+                                        <path d="M0 864v96h992a32 32 0 0 0 32-32v-64H0z" fill="#EACA44" />
+                                        <path d="M0 672h1024v32H0z" fill="" />
+                                        <path d="M96 576.64h64v-1.024h64v1.024h64v-1.024h96c0 0.384 0.192 0.672 0.224 1.024h63.552c0.032-0.384 0.224-0.64 0.224-1.024h64v1.024h64v-1.024h160c0 0.384 0.192 0.672 0.224 1.024h63.552c0.032-0.384 0.224-0.64 0.224-1.024h32c0 0.384 0.192 0.672 0.224 1.024h63.552c0.032-0.384 0.224-0.64 0.224-1.024h64v1.024h64v-65.024L726.24 81.824A37.12 37.12 0 0 0 672 71.616L0 511.616v64h96v1.024z" fill="#4F3923" />
+                                        <path d="M0 864h1024v32H0z" fill="" />
+                                        <path d="M672 288m-96 0a96 96 0 1 0 192 0 96 96 0 1 0-192 0Z" fill="#EF4D4D" />
+                                        <path d="M672 352a95.808 95.808 0 0 1-94.368-80A91.008 91.008 0 0 0 576 288a96.032 96.032 0 0 0 192 0c0-5.472-0.704-10.784-1.632-16A95.808 95.808 0 0 1 672 352z" fill="" />
+                                        <path d="M751.776 341.312a95.936 95.936 0 0 1-159.552 0c-10.208 7.648-16.224 16.8-16.224 26.688 0 26.496 42.976 48 96 48s96-21.504 96-48c0-9.888-6.016-19.04-16.224-26.688z" fill="" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="icon" version="1.1">
+                                        <path d="M256 832m-192 0a192 192 0 1 0 384 0 192 192 0 1 0-384 0Z" fill="#EF4D4D" />
+                                        <path d="M768 832m-192 0a192 192 0 1 0 384 0 192 192 0 1 0-384 0Z" fill="#EF4D4D" />
+                                        <path d="M768 960a223.712 223.712 0 0 1-190.816-107.136A192 192 0 0 0 768 1024a192 192 0 0 0 190.816-171.136A223.712 223.712 0 0 1 768 960zM254.816 960A223.68 223.68 0 0 1 64 852.864 192 192 0 0 0 254.816 1024a192 192 0 0 0 190.816-171.136A223.712 223.712 0 0 1 254.816 960z" fill="" />
+                                        <path d="M640 256c0-67.776 10.112-173.312 19.808-197.984 7.136-18.144 21.696-41.536 1.696-53.536-20.512-15.488-59.264 17.856-59.264 17.856A1055.392 1055.392 0 0 0 241.568 640.704c4.768-0.32 9.568-0.704 14.432-0.704 17.184 0 33.76 2.464 49.6 6.688a990.24 990.24 0 0 1 278.784-521.696c0.032-0.224 0.128-0.288 0.192-0.512h0.224c-0.224 0.224-0.192 0.288-0.416 0.512A1066.528 1066.528 0 0 0 576 256c0 147.872 30.496 288.608 85.376 416.352a190.08 190.08 0 0 1 58.496-25.984A989.248 989.248 0 0 1 640 256z" fill="#434854" />
+                                        <path d="M899.808 227.776s45.248-90.496-22.656-158.368c-67.872-67.872-158.368-22.624-158.368-22.624s-45.28 90.496 22.592 158.368c67.904 67.904 158.432 22.624 158.432 22.624z" fill="#3AAD73" />
+                                        <path d="M718.784 46.784s-45.28 90.496 22.592 158.368c67.904 67.904 158.432 22.624 158.432 22.624l-181.024-180.992z" fill="" />
+                                        <path d="M248.224 608.416c-2.304 10.72-4.672 21.472-6.656 32.32 4.768-0.352 9.568-0.736 14.432-0.736 8.192 0 16.224 0.672 24.16 1.696l3.072 0.48c7.488 1.056 14.88 2.56 22.048 4.48l0.32 0.064c1.984-10.528 4.832-20.736 7.168-31.168A223.072 223.072 0 0 0 256 608c-2.624 0-5.152 0.32-7.776 0.416zM707.904 616.416a222.88 222.88 0 0 0-58.592 25.856c3.968 10.048 7.808 20.192 12.064 30.08l0.192-0.096c8.64-5.76 17.792-10.72 27.328-15.04l0.672-0.352c9.728-4.352 19.84-7.84 30.336-10.56-4.256-9.824-8.096-19.904-12-29.888z" fill="" />
+                                        <path d="M832 736m-32 0a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z" fill="#FFFFFF" />
+                                        <path d="M320 736m-32 0a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z" fill="#FFFFFF" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 1024 1024" class="icon" version="1.1">
+                                        <path d="M512 32C246.912 32 32 246.912 32 512s214.912 480 480 480 480-214.912 480-480S777.088 32 512 32z m0 672a192 192 0 0 1 0-384 192 192 0 0 1 0 384z" fill="#EACA44" />
+                                        <path d="M1021.856 469.312C1000.096 206.56 780.384 0 512 0 229.216 0 0 229.216 0 512a32 32 0 1 0 64 0h32v64a32 32 0 1 0 64 0v-64h32a32 32 0 1 0 64 0h32v64a32 32 0 1 0 64 0v-64c0-88.384 71.616-160 160-160s160 71.616 160 160a32 32 0 1 0 64 0h32v64a32 32 0 1 0 64 0v-64h32a32 32 0 1 0 64 0h32v64a32 32 0 1 0 64 0v-96a31.328 31.328 0 0 0-2.144-10.688z" fill="#4F3923" />
+                                        <path d="M512 864c-191.776 0-361.184-94.08-465.888-238.208C97.312 835.84 286.176 992 512 992s414.688-156.16 465.888-366.208C873.184 769.92 703.776 864 512 864z" fill="" />
+                                        <path d="M512 288a192 192 0 0 0-192 192c0 38.144 11.296 73.664 30.464 103.52 0.64-2.464 1.536-4.832 1.536-7.52v-64c0-88.384 71.616-160 160-160s160 71.616 160 160a31.68 31.68 0 0 0 21.6 29.92A190.752 190.752 0 0 0 704 480a192 192 0 0 0-192-192z" fill="" />
+                                        <path d="M512 176a16 16 0 0 1-32 0v-64a16 16 0 0 1 32 0v64zM96 432a16 16 0 0 1-32 0v-64a16 16 0 0 1 32 0v64z" fill="#84BF56" />
+                                        <path d="M896 400a16 16 0 0 1-32 0v-64a16 16 0 0 1 32 0v64z" fill="#EF4D4D" />
+                                        <path d="M624 256a16 16 0 0 1 0-32h64a16 16 0 0 1 0 32h-64zM144 256a16 16 0 0 1 0-32h64a16 16 0 0 1 0 32h-64z" fill="#469FCC" />
+                                        <path d="M772.672 305.952a16 16 0 0 1-22.624-22.624l45.248-45.248a16 16 0 0 1 22.624 22.624l-45.248 45.248z" fill="#84BF56" />
+                                        <path d="M366.048 283.328a16 16 0 0 1-22.624-22.624l45.248-45.248a16 16 0 0 1 22.624 22.624l-45.248 45.248zM680.576 113.952a16 16 0 0 1-22.624 22.624l-45.248-45.248a16 16 0 0 1 22.624-22.624l45.248 45.248z" fill="#EF4D4D" />
+                                        <path d="M347.328 132.672a16 16 0 0 1-22.624 22.624L279.424 110.048a16 16 0 0 1 22.624-22.624l45.28 45.248zM283.328 388.672a16 16 0 0 1-22.624 22.624l-45.248-45.248a16 16 0 0 1 22.624-22.624l45.248 45.248z" fill="#EACF60" />
+                                        <path d="M528 752m-16 0a16 16 0 1 0 32 0 16 16 0 1 0-32 0Z" fill="#FFFFFF" />
+                                        <path d="M688 784m-16 0a16 16 0 1 0 32 0 16 16 0 1 0-32 0Z" fill="#FFFFFF" />
+                                        <path d="M848 688m-16 0a16 16 0 1 0 32 0 16 16 0 1 0-32 0Z" fill="#FFFFFF" />
+                                        <path d="M752 656m-16 0a16 16 0 1 0 32 0 16 16 0 1 0-32 0Z" fill="#FFFFFF" />
+                                        <path d="M464 880m-16 0a16 16 0 1 0 32 0 16 16 0 1 0-32 0Z" fill="#FFFFFF" />
+                                        <path d="M656 912m-16 0a16 16 0 1 0 32 0 16 16 0 1 0-32 0Z" fill="#FFFFFF" />
+                                        <path d="M208 688m-16 0a16 16 0 1 0 32 0 16 16 0 1 0-32 0Z" fill="#FFFFFF" />
+                                        <path d="M336 816m-16 0a16 16 0 1 0 32 0 16 16 0 1 0-32 0Z" fill="#FFFFFF" />
+                                        <path d="M304 688m-16 0a16 16 0 1 0 32 0 16 16 0 1 0-32 0Z" fill="#FFFFFF" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div id="chocolate-box-cover"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <section class="py-5 max-w-3xl mx-auto px-5">
+                <h1 data-duration="1" data-ease="back.inOut(2)" data-start="center bottom+=50%" data-end="bottom bottom-=40%" class="scroll-float text-3xl sm:text-5xl font-extrabold tracking-tight mb-3 text-rose-700">Hứa với anh những điều sau!</h1>
+                <p data-duration="1" data-ease="back.inOut(2)" data-start="center bottom+=50%" data-end="bottom bottom-=40%" class="scroll-float text-sm sm:text-base text-gray-700">để không bị mệt trong mối quan hệ này nha</p>
+            </section>
+            <section class="max-w-3xl mx-auto px-5">
+                <div id="tickets" class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                    <div class="card rounded-2xl p-4 border-b border-white/30 bg-white/30 backdrop-blur text-sm text-center" style="transform: perspective(900px) rotateX(0deg) rotateY(0deg) translateZ(0px);">Luôn là chính mình nha</div>
+                    <div class="card rounded-2xl p-4 border-b border-white/30 bg-white/30 backdrop-blur text-sm text-center" style="transform: perspective(900px) rotateX(0deg) rotateY(0deg) translateZ(0px);">Kiên định với lựa chọn</div>
+                    <div class="card rounded-2xl p-4 border-b border-white/30 bg-white/30 backdrop-blur text-sm text-center" style="transform: perspective(900px) rotateX(0deg) rotateY(0deg) translateZ(0px);">Luôn luôn chân thành</div>
+                    <div class="card rounded-2xl p-4 border-b border-white/30 bg-white/30 backdrop-blur text-sm text-center" style="transform: perspective(900px) rotateX(0deg) rotateY(0deg) translateZ(0px);">Trung thực với cảm xúc</div>
+                </div>
+            </section>
+            <section class="max-w-3xl mx-auto px-5">
+                <div class="rounded-3xl p-5 space-y-3  bg-white/30 border-b border-white/30">
+                    <div class="flex justify-between items-center">
+                        <span class="text-lg font-semibold">Các câu hỏi trắc nhiệm</span>
+                        <span class="quiz-counter text-lg font-semibold">Câu <span id="quizNumber" class="text-lg font-semibold">1</span>/<span id="quizTotal" class="text-lg font-semibold"></span></span>
+                    </div>
+                    <p id="quizQuestion" class="opacity-70"></p>
+                    <div id="quizOptions" class="flex gap-3 flex-wrap"></div>
+                </div>
+            </section>
+            <section class="py-5 max-w-3xl mx-auto px-5">
+                <h1 data-duration="1" data-ease="back.inOut(2)" data-start="center bottom+=50%" data-end="bottom bottom-=40%" class="scroll-float text-3xl sm:text-5xl font-extrabold tracking-tight mb-3 text-rose-700">Danh sách nhạc nền</h1>
+                <p data-duration="1" data-ease="back.inOut(2)" data-start="center bottom+=50%" data-end="bottom bottom-=40%" class="scroll-float text-sm sm:text-base text-gray-700">Những bài nhạc nền</p>
+            </section>
+            <section class="max-w-3xl mx-auto px-5">
+                <div id="music-header" class="animated-gradient rounded-3xl p-5 grid grid-rows-[60px_1fr] grid-cols-[auto_1fr] sm:grid-cols-[200px_1fr] gap-3 sm:gap-5">
+                    <div class="rounded-xl bg-white overflow-hidden aspect-square w-[60px] sm:w-full sm:row-span-2">
+                        <img id="music-image" class="w-full h-full object-cover">
+                    </div>
+                    <div class="grid grid-rows-2 text-black">
+                        <div class="grid grid-cols-[1fr_auto] items-center gap-3 font-extrabold whitespace-nowrap">
+                            <span id="music-title" class="overflow-x-hidden text-lg sm:text-2xl"></span>
+                            <span id="music-duration" class="overflow-x-hidden text-sm"></span>
+                        </div>
+                        <span id="music-artist" class="overflow-x-hidden whitespace-nowrap opacity-70"></span>
+                    </div>
+                    <div id="lyric-container" class="lyric-container max-h-[120px] overflow-y-auto scrollbar-none col-span-2 sm:col-span-1">
+                        <div class="lyric-mask"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="max-w-3xl mx-auto px-5">
+                <div class="rounded-3xl overflow-hidden bg-gray-100">
+                    <ul id="music-list" class="grid grid-cols-1 grid-rows-7 p-[86px_20px_0px_20px] m-[0px_0px_-34px_0px] h-[500px]"></ul>
+                </div>
+            </section>
+            <footer class="py-5 text-center text-xs text-gray-600">
+                <span id="footer-text">Chúc vợ iu Valentine vui vẻ hạnh phúc</span>
+            </footer>
+        </main>
+        <div id="gift-modal" class="fixed inset-0 hidden items-center justify-center bg-black/50 backdrop-blur-sm z-50 px-4">
+            <div class="bg-white rounded-3xl shadow-xl max-w-sm w-full p-6 space-y-3 relative">
+                <h3 class="text-xl font-semibold">Bất ngờ</h3>
+                <p class="text-sm text-gray-600 mb-4">Valentine này không cần điều gì quá rực rỡ, chỉ mong vợ anh luôn bình an, vui vẻ và cảm nhận được rằng có một người thật
+                lòng trân trọng em. Cảm ơn em vì những điều nhỏ bé nhưng chân thành, vì sự quan tâm không phô trương mà đủ ấm áp để anh
+                mỉm cười. Chúc vợ yêu một ngày Valentine an yên, đủ ấm để thấy được yêu thương, và đủ nhẹ để mọi điều tốt đẹp tự nhiên ở
+                lại bên anh. Dù hôm nay hay những ngày sau này, mong em luôn gặp những điều tử tế, giống như chính con người em vậy.</p>
+                <button id="btn-close" class="w-full rounded-2xl px-4 py-3 bg-rose-500 text-white font-medium">Đóng</button>
+            </div>
+        </div>
+        <canvas id="gifts-container" class="fixed w-full h-full inset-0 overflow-hidden pointer-events-none z-50"></canvas>
+        <script defer src="app.js"></script>
+    </body>
+
+</html>

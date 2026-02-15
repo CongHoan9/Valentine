@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "question": "Điều đầu tiên anh mong em luôn giữ trong mối quan hệ này là gì?",
+    "options": [
+      "Luôn là chính mình",
+      "Điều chỉnh bản thân",
+      "Giữ mọi thứ trong lòng"
+    ]
+  },
+  {
+    "id": 2,
+    "question": "Khi đã lựa chọn ở bên nhau, điều quan trọng là gì?",
+    "options": [
+      "Kiên định với lựa chọn",
+      "So sánh với người khác",
+      "Bỏ cuộc mỗi khi khó khăn"
+    ]
+  },
+  {
+    "id": 3,
+    "question": "Trong tình cảm, anh mong em luôn như thế nào?",
+    "options": [
+      "Luôn luôn chân thành",
+      "Chỉ nói điều làm vừa lòng",
+      "Giấu suy nghĩ thật của mình"
+    ]
+  },
+  {
+    "id": 4,
+    "question": "Khi cảm xúc thay đổi hoặc có điều không vui, em nên làm gì?",
+    "options": [
+      "Trung thực với cảm xúc",
+      "Im lặng và chịu đựng",
+      "Hỏi hội đồng quản trị"
+    ]
+  },
+  {
+    "id": 5,
+    "question": "Mục tiêu của những lời hứa này là gì?",
+    "options": [
+      "Để không mệt trong mối quan hệ",
+      "Để kiểm soát đối phương",
+      "Chứng minh ai đúng ai sai"
+    ]
+  }
+]
