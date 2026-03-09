@@ -406,8 +406,6 @@ function initAudio() {
             const li = listEl.children[index];
             if (!li) return resolve();
             const audio = li.querySelector("audio");
-            const numberEl = li.querySelector(".track-number");
-            const titleEl = li.querySelector(".track-title");
             const track = CONFIG.musicList[index];
             if (currentIndex !== null && currentIndex !== index) {
                 resetTrackState(currentIndex);
@@ -443,8 +441,8 @@ function initAudio() {
             localStorage.setItem("currentTrackIndex", index);
             localStorage.setItem("currentTrackTime", resumeTime);
             localStorage.setItem("currentLyricIndex", -1);
-            //const bgDiv = document.getElementById("bg-blur");
-            //bgDiv.style.backgroundImage = track.img ? `url(${track.img})` : "";
+            const bgDiv = document.getElementById("bg-blur");
+            bgDiv.style.backgroundImage = track.img ? `url(${track.img})` : "";
             try {
                 audio.currentTime = resumeTime;
                 if (!isNaN(audio.duration)) {
@@ -908,3 +906,4 @@ gsap.timeline({
     transformOrigin: "right center",
     ease: "power2.inOut"
 }, 0);
+
