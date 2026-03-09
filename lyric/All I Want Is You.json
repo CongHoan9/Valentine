@@ -3,6 +3,15 @@
     "time": 0,
     "parts": [
       {
+        "text": "♪",
+        "color": null
+      }
+    ]
+  },
+  {
+    "time": 0,
+    "parts": [
+      {
         "text": "I know what you want, ",
         "color": null
       },
@@ -875,4 +884,5 @@
       }
     ]
   }
+
 ]
