@@ -1,47 +1,47 @@
 [
   {
     "id": 1,
-    "question": "Điều đầu tiên anh mong em luôn giữ trong mối quan hệ này là gì?",
+    "question": "What is the first thing you hope I will always keep in this relationship?",
     "options": [
-      "Luôn là chính mình",
-      "Điều chỉnh bản thân",
-      "Giữ mọi thứ trong lòng"
+      "Always be yourself",
+      "Adjust to each other",
+      "Keep everything in your heart"
     ]
   },
   {
     "id": 2,
-    "question": "Khi đã lựa chọn ở bên nhau, điều quan trọng là gì?",
+    "question": "What is the most important thing when you've chosen to be together?",
     "options": [
-      "Kiên định với lựa chọn",
-      "So sánh với người khác",
-      "Bỏ cuộc mỗi khi khó khăn"
+      "Stay committed to your choices",
+      "Compare yourself to others",
+      "Give up when facing difficulties"
     ]
   },
   {
     "id": 3,
-    "question": "Trong tình cảm, anh mong em luôn như thế nào?",
+    "question": "In a relationship, what do you hope I will always be?",
     "options": [
-      "Luôn luôn chân thành",
-      "Chỉ nói điều làm vừa lòng",
-      "Giấu suy nghĩ thật của mình"
+      "Always sincere",
+      "Only say what makes others comfortable",
+      "Hide your true thoughts"
     ]
   },
   {
     "id": 4,
-    "question": "Khi cảm xúc thay đổi hoặc có điều không vui, em nên làm gì?",
+    "question": "When your emotions change or something makes you unhappy, what should you do?",
     "options": [
-      "Trung thực với cảm xúc",
-      "Im lặng và chịu đựng",
-      "Hỏi hội đồng quản trị"
+      "Be honest with your feelings",
+      "Stay silent and endure",
+      "Ask the board of directors"
     ]
   },
   {
     "id": 5,
-    "question": "Mục tiêu của những lời hứa này là gì?",
+    "question": "What is the purpose of these promises?",
     "options": [
-      "Để không mệt trong mối quan hệ",
-      "Để kiểm soát đối phương",
-      "Chứng minh ai đúng ai sai"
+      "To not get tired in this relationship",
+      "To control the other person",
+      "To prove who is right or wrong"
     ]
   }
 ]

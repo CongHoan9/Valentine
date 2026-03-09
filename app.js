@@ -129,7 +129,7 @@ function computeDaysTogether(dateStr) {
 function renderCountdown() {
     const start = new Date(CONFIG.anniversary);
     const el = document.getElementById("countdown");
-    const units = ["Ngày", "Giờ", "Phút", "Giây"];
+    const units = ["Day", "Hour", "Minute", "Second"];
     let html = units.map(t => `
         <div class="card rounded-2xl p-3 bg-white">
             <div class="text-xl font-bold value"></div>
